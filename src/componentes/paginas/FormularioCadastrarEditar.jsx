@@ -37,7 +37,7 @@ function FormularioCadastrarEditar(props) {
                     setFormulario(resposta.data);
                 } catch (err) {
                     setErro({
-                        texto: err.message || 'Erro ao carregar dados do item.'
+                        texto:'Erro ao carregar dados do item.'
                     });
                 } finally {
                     setCarregando(false);
@@ -58,12 +58,10 @@ function FormularioCadastrarEditar(props) {
         e.preventDefault();
         setMensagem({ tipo: '', texto: '' });
 
-        console.log("Objeto enviado para a API:", formulario);
-
         try {
            
             if (id && id !== ':id') {
-                await api.put(`/itens/${id}`, formulario); // Usa 'formulario' (o nome do seu estado)
+                await api.put(`/itens/${id}`, formulario);
                 setMensagem({ tipo: 'sucesso', texto: 'Item atualizado com sucesso!' });
             } else {
                 await api.post('/itens', formulario);
@@ -74,10 +72,9 @@ function FormularioCadastrarEditar(props) {
                 navigate('/');
             }, 1500);
         } catch (err) {
-            console.log("ERRO DETALHADO API:", JSON.stringify(err.response?.data?.detail));
             setMensagem({
                 tipo: 'erro',
-                texto: err.response?.data?.mensagem || 'Erro ao salvar item.'
+                texto:'Erro ao salvar item.'
             });
         }
     }   
@@ -125,6 +122,7 @@ function FormularioCadastrarEditar(props) {
                         ))}
                     </select>
                 </div>
+                
                 <div className="campo-grupo">
                     <label htmlFor="local">Local</label>
                     <select name="local" value={formulario.local} onChange={(e) => handleChange('local', e.target.value)}>

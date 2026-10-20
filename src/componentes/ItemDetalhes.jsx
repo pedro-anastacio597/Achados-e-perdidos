@@ -65,7 +65,7 @@ function ItemDetalhes() {
     } catch (err) {
       setMensagem({
         tipo: 'erro',
-        texto: err.response?.data?.mensagem || 'Erro ao marcar como devolvido.'
+        texto: 'Erro ao marcar como devolvido.'
       });
     }
   }
@@ -93,9 +93,9 @@ function ItemDetalhes() {
 
         <div className="detalhes-header-info">
           <h2 className="detalhes-titulo">{item.nome}</h2>
-          <span className={`status-pill status-${item.status}`}>
+          <p className={`status-pill status-${item.status}`}>
             {item.status}
-          </span>
+          </p>
         </div>
       </div>
 
@@ -107,28 +107,28 @@ function ItemDetalhes() {
 
       <div className="detalhes-info-grid">
         <div className="info-item">
-          <label>Descrição:</label>
-          <p>{item.descricao || '-'}</p>
+          <p className="titulo">Descrição:</p>
+          <p className="info">{item.descricao || '-'}</p>
         </div>
 
         <div className="info-item">
-          <label>Categoria:</label>
-          <p>{item.categoria || '-'}</p>
+          <p className="titulo">Categoria:</p>
+          <p className="info">{item.categoria || '-'}</p>
         </div>
 
         <div className="info-item">
-          <label>Local:</label>
-          <p>{item.local || '-'}</p>
+          <p className="titulo">Local:</p>
+          <p className="info">{item.local || '-'}</p>
         </div>
 
         <div className="info-item">
-          <label>Encontrado em:</label>
-          <p>{formatarData(item.data_encontrado)}</p>
+          <p className="titulo">Encontrado em:</p>
+          <p className="info">{formatarData(item.data_encontrado)}</p>
         </div>
 
         <div className="info-item">
-          <label>Devolvido para:</label>
-          <p>{item.devolvido_para || '-'}</p>
+          <p className="titulo">Devolvido para:</p>
+          <p className="info">{item.devolvido_para || '-'}</p>
         </div>
       </div>
 
@@ -146,15 +146,15 @@ function ItemDetalhes() {
             Excluir
           </button>
         ) : (
-          <span className="box-confirmacao">
-            <span>Tem certeza?</span>
+          <p className="box-confirmacao">
+            <p>Tem certeza?</p>
             <button type="button" className="btn-acao btn-perigo" onClick={handleExcluir}>
               Sim
             </button>
             <button type="button" className="btn-acao btn-secundario" onClick={() => setConfirmandoExclusao(false)}>
               Cancelar
             </button>
-          </span>
+          </p>
         )}
       </div>
 
