@@ -22,6 +22,10 @@
     font-size: 32px;
 }
 
+.subtitulo a{
+    color: whitesmoke;
+}
+
 .busca{
     width: 95%;
     padding: 10px 21px;

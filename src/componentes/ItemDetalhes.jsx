@@ -37,7 +37,7 @@ function ItemDetalhes() {
     } catch (err) {
       setMensagem({
         tipo: 'erro',
-        texto: err.response?.data?.mensagem || 'Erro ao excluir o item.'
+        texto: 'Erro ao excluir o item.'
       });
       setConfirmandoExclusao(false);
     }

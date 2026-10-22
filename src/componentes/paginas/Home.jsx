@@ -57,7 +57,7 @@ function Home(props){
         <div>
             <div className="subtitulo">
                 <h2>Itens encontrados</h2>
-                <Link to="/novo" >+ Novo item</Link>
+                <Link to="/novo">+ Novo item</Link>
             </div>
 
             <div>
