@@ -1,3 +1,69 @@
 body{
     background-color: #f5f2eb;
 }
+
+.container-principal{
+    width: 100%;
+    max-width: 1900px;
+    margin: 30px auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.estado-card {
+  border: 2px solid #2d2d2d;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.estado-card h3 {
+  margin: 0 0 6px 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.estado-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #4a4a4a;
+}
+
+.icone-carregamento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icone-carregamento img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.carrgamento{
+    min-height: 90px;
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  border: 2px solid #ddd;
+  border-top: #333;
+  border-radius: 50%;
+}
+
+.erro{
+    border-color: #c62828;
+    background-color: #fff5f5;
+}
+

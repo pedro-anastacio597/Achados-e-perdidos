@@ -6,6 +6,7 @@ import Home from './componentes/paginas/home'
 import api from './servicos/api'
 import './App.css'
 import ItemDetalhes from './componentes/ItemDetalhes'
+import iconecarregamento from './imagens/icone-carregamento.png'
 
 function App() {
   const [usuario, setUsuario] = useState(null)
@@ -26,7 +27,7 @@ function App() {
                   setCategorias(cat.data)
 
               } catch (err){
-                  setErro(err.message || "Erro ao carregar dados iniciais")
+                  setErro( "Erro ao carregar dados iniciais")
 
               } finally{
                   setCarregando(false)
@@ -37,16 +38,30 @@ function App() {
   },[]);
 
   return (
-    <div>
+    <div className='container-principal'>
+      {usuario && <Cabecalho nome={usuario.nome}/>}
+
       {carregando && (
-          <p>Carregando dados</p>
+        <div className='estado-card carregando'>
+          <div>
+          <h3>Carregando</h3>
+          <p>Carregando itens...</p>
+          </div>
+
+          <div className='icone-carregamento'>
+            <img src={iconecarregamento} alt="spinner de carregemento"/>
+          </div>
+        </div>
+        
         )}
+
 
         {erro &&(
-          <p>{erro}</p>
+          <div className='estado-card erro'>
+            <h3>Erro</h3>
+            <p>{erro}</p>
+          </div>
         )}
-
-        {usuario && <Cabecalho nome={usuario.nome}/>}
 
       <Routes>
         <Route 

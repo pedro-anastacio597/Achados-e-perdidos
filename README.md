@@ -1,16 +1,21 @@
-# React + Vite
+![Tela da página inicial](./Tela%20inicial.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Tela de itens filtrados](./Tela%20de%20filtro.png)
 
-Currently, two official plugins are available:
+![Tela de carregamento](./Tela%20de%20carregamento.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Tela ao ocorrer um erro](./Tela%20de%20erro.png)
 
-## React Compiler
+![Tela de lista vaiza](./Tela%20de%20lista%20vazia.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+![Tela para criar um novo item](./Tela%20para%20adicionar%20item.png)
 
-## Expanding the ESLint configuration
+![Tela de confirmação criação de um novo item](./Tela%20de%20cadastro%20feito%20com%20sucesso.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Tela ao ocorrer um erro ao adicionar um novo item](./Tela%20de%20erro%20ao%20fazer%20cadastro.png)
+
+![Tela do item com detalhes](./Tela%20do%20item%20detalhado.png)
+
+![Tela de edição de uma item](./Tela%20de%20edição.png)
+
+![Tela de confirmar exclusão](./Tela%20de%20confirmar%20exclusão.png)

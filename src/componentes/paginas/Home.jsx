@@ -3,6 +3,9 @@ import{Link} from 'react-router-dom';
 import ItemCard from "../ItemCard";
 import api from "../../servicos/api";
 import './home.css'
+import iconecarregamento from '../../imagens/icone-carregamento.png'
+import '../../App.css'
+
 
 function Home(props){
     const [itens, setItens] = useState([])
@@ -27,11 +30,11 @@ function Home(props){
         setCarregando(true);
         try {
             const resposta = await api.get('/itens');
-            setItens(resposta.data);    
+            setItens(resposta.data);   
         } catch (err) {
-            setErro(err.message || "Erro ao carregar itens");
+            setErro( "Erro ao carregar itens");
         } finally {
-            setCarregando(false);
+            setCarregando(false);   
         }   
     }
 
@@ -91,20 +94,27 @@ function Home(props){
             </div>
 
             {carregando && (
-                <div>
-                    <h3>Carregando itens</h3>
+                <div className='estado-card carregando'>
+                    <div>
+                    <h3>Carregando</h3>
+                    <p>Carregando itens...</p>
+                    </div>
+        
+                    <div className='icone-carregamento'>
+                    <img src={iconecarregamento} alt="spinner de carregemento"/>
+                    </div>
                 </div>
             )}
 
             {erro && (
-                <div>
+                <div className='estado-card erro'>
                     <h3>Erro</h3>
                     <p>{erro}</p>
                 </div>
             )}
 
             {!erro && !carregando && itens.length===0 && (
-                <div>
+                <div className="estado-card">
                     <h3>Lista vazia</h3>
                     <p>Nenhum item encontrado</p>
                 </div>
