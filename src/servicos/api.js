@@ -10,14 +10,12 @@ const api = axios.create({
 
 api.interceptors.request.use((config) => {
   const apiKey = import.meta.env.VITE_API_KEY;
-  const token = localStorage.getItem('token');
 
-  if (apiKey) {
+  if (!apiKey) {
+    console.error("❌ ERRO: A variável VITE_API_KEY está vazia ou não foi encontrada no .env!");
+  } else {
     config.headers['X-API-KEY'] = apiKey;
-  }
-
-  if (token) {
-    config.headers.Authorization = `Bearer ${token}`;
+    console.log("🔑 Requisição enviada com a chave:", apiKey);
   }
 
   return config;
