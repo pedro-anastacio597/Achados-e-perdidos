@@ -4,7 +4,6 @@ import ItemCard from "../ItemCard";
 import api from "../../servicos/api";
 import './Home.css'
 import iconecarregamento from '../../imagens/icone-carregamento.png'
-import '../../App.css'
 
 
 function Home(props){
